@@ -29,7 +29,8 @@ export default function Home() {
 		if (!ready) setReady(true);
 
 		const json = await result.json();
-		setResult(json);
+		console.log('JSON =====', json[0]);
+		setResult(json[0]);
 	};
 
 	const summerize = async (text) => {
@@ -42,7 +43,7 @@ export default function Home() {
 		if (!ready) setReady(true);
 
 		const json = await result.json();
-		setResult(json);
+		setResult(json[0]);
 	};
 
 	const generate = async (text) => {
@@ -54,9 +55,8 @@ export default function Home() {
 
 		if (!ready) setReady(true);
 
-		console.log('result', result);
 		const json = await result.json();
-		setResult(json);
+		setResult(json[0]);
 	};
 
 	const isToxic = async (text) => {
@@ -131,7 +131,7 @@ export default function Home() {
 			</div>
 
 			{ready !== null && (
-				<pre className='bg-gray-100 p-2 rounded'>
+				<pre className='bg-gray-100 dark:bg-gray-800 p-2 rounded max-w-[600px]'>
 					{!ready || !result ? 'Loading...' : JSON.stringify(result, null, 2)}
 				</pre>
 			)}

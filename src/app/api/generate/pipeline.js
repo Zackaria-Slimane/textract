@@ -4,7 +4,7 @@ import { pipeline } from '@xenova/transformers';
 const SummaryPipe = () =>
 	class PipelineSingletonGenerate {
 		static task = 'text-generation';
-		static model = 'microsoft/Phi-3-mini-4k-instruct-onnx-web';
+		static model = 'Xenova/distilgpt2';
 		static instance = null;
 
 		static async getInstance(progress_callback = null) {
